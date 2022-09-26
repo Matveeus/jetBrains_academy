@@ -34,6 +34,7 @@ taskInput.addEventListener('keypress' ,  (keyPressed) => {
     if (keyPressed.key === 'Enter') {
         createTask();
     }
+    isArrayEmpty();
 });
 
 // Remove task from list function
@@ -50,7 +51,7 @@ let deleteTask = (element, object, text, objectIndex) => {
             taskListArray.splice(index, 1);
         }
         localStorage.setItem('tasks', JSON.stringify(taskListArray));
-
+        isArrayEmpty();
     });
 }
 
@@ -74,6 +75,7 @@ let taskComplete = (checkbox, object, text, span) => {
 
 // Load list from local storage
 let getFromLocalStorage = () => {
+    isArrayEmpty();
     for (let i = 0; taskListArray.length > i; i++) {
         const li = document.createElement('li');
         const input = document.createElement('input');
@@ -93,7 +95,25 @@ let getFromLocalStorage = () => {
         taskList.appendChild(li).append(input, span, button);
         deleteTask(button, taskListArray[i], span , i)
         taskComplete(input, taskListArray[i], span, span)
+
     }
 }
+
+//Check function to display icon when array(todos) is empty.
+let isArrayEmpty = () => {
+    const iconBlock = document.getElementById('no-tasks-yet');
+    if (taskListArray.length != 0) {
+        iconBlock.style.display = 'none'
+    }
+    else {
+        iconBlock.style.display = 'block'
+    }
+}
+
+//Event to get elements after page reload
 document.addEventListener('DOMContentLoaded', getFromLocalStorage);
+
+
+
+
 

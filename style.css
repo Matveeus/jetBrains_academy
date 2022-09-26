@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400');
+@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@700&display=swap');
 body{
     width: 100%;
     height: 100%;
@@ -30,8 +31,8 @@ container::-webkit-scrollbar-thumb{
 }
 #main-title{
     text-align: center;
-    font-family: Fraunces;
-    font-weight: 500;
+    font-family: Aleo;
+    font-weight: 700;
     font-size: 50px;
     margin-top: 0;
 }
@@ -39,7 +40,7 @@ container::-webkit-scrollbar-thumb{
     display: flex;
     justify-content: space-between;
     height: 40px;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
 }
 #input-task{
     width: 70%;
@@ -47,7 +48,7 @@ container::-webkit-scrollbar-thumb{
     border-bottom: 2px solid #b6b6b6;
     outline: none;
     font-family: 'DM Sans';
-    font-size: 17px;
+    font-size: 19px;
 }
 #add-task-button{
     width: 20%;
@@ -100,4 +101,16 @@ container::-webkit-scrollbar-thumb{
 }
 .text-decoration{
     text-decoration: line-through;
+}
+#no-tasks-yet div{
+    display: flex;
+}
+#no-tasks-yet div img{
+    width: 100px;
+    margin: 0 auto;
+}
+#no-tasks-yet p{
+    text-align: center;
+    font-family: 'DM Sans';
+    font-size: 19px;
 }
