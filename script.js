@@ -7,6 +7,8 @@ const addTaskButton = document.getElementById('add-task-button');
 let createTask = () => {
     if (taskInput.value != 0){
         const newTask = document.createElement('li');
+        newTask.classList.add('animate__animated')
+        newTask.classList.add('animate__fadeIn')
         const checkboxTask = document.createElement('input');
         checkboxTask.type = 'checkbox';
         const textTask = document.createElement('span');
@@ -24,7 +26,7 @@ let createTask = () => {
         localStorage.setItem('tasks', JSON.stringify(taskListArray));
         taskInput.value = '';
         deleteTask(deleteButtonTask, taskObject, newTaskText);
-        taskComplete(checkboxTask, taskObject, textTask, newTaskText);
+        taskComplete(checkboxTask, taskObject, textTask);
     }
 }
 
@@ -56,11 +58,8 @@ let deleteTask = (element, object, text, objectIndex) => {
 }
 
 // Task Complete/Incomplete Function
-let taskComplete = (checkbox, object, text, span) => {
+let taskComplete = (checkbox, object, text) => {
     checkbox.addEventListener('change', () => {
-        let index = taskListArray.findIndex(object => {
-            return object.task == span;
-        });
         if (checkbox.checked){
             text.classList.add('text-decoration');
             object.checkbox = true;

@@ -49,6 +49,8 @@ container::-webkit-scrollbar-thumb{
     outline: none;
     font-family: 'DM Sans';
     font-size: 19px;
+    -webkit-transition: width .35s ease-in-out;
+    transition: width .35s ease-in-out;
 }
 #add-task-button{
     width: 20%;
